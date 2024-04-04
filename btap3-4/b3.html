@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Máy Tính</title>
+</head>
+<body>
+<div>
+    <h2>Tính Chu Vi và Diện Tích Hình Chữ Nhật</h2>
+    <label for="rectLength">Chiều Dài:</label>
+    <input type="number" id="rectLength" placeholder="Chiều Dài">
+    <label for="rectWidth">Chiều Rộng:</label>
+    <input type="number" id="rectWidth" placeholder="Chiều Rộng">
+    <button onclick="tinhChuViVaDienTichHinhChuNhat()">Tính Toán</button>
+    <p id="rectResult"></p>
+</div>
+<div>
+    <h2>Tính Chu Vi và Diện Tích Hình Tròn</h2>
+    <label for="circleRadius">Bán Kính:</label>
+    <input type="number" id="circleRadius" placeholder="Bán Kính">
+    <button onclick="tinhChuViVaDienTichHinhTron()">Tính Toán</button>
+    <p id="circleResult"></p>
+</div>
+<script>
+    function tinhChuViVaDienTichHinhChuNhat() {
+        var chieuDai = parseFloat(document.getElementById('rectLength').value);
+        var chieuRong = parseFloat(document.getElementById('rectWidth').value);
+        var chuVi = 2 * (chieuDai + chieuRong);
+        var dienTich = chieuDai * chieuRong;
+        document.getElementById('rectResult').innerHTML = "Chu Vi: " + chuVi.toFixed(2) + ", Diện Tích: " + dienTich.toFixed(2);
+    }
+
+    function tinhChuViVaDienTichHinhTron() {
+        var banKinh = parseFloat(document.getElementById('circleRadius').value);
+        var chuVi = 2 * Math.PI * banKinh;
+        var dienTich = Math.PI * banKinh * banKinh;
+        document.getElementById('circleResult').innerHTML = "Chu Vi: " + chuVi.toFixed(2) + ", Diện Tích: " + dienTich.toFixed(2);
+    }
+</script>
+</body>
+</html>
